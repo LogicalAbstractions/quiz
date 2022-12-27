@@ -55,7 +55,6 @@ class Question(models.Model):
         return ' '.join(self.get_text_words()[:8])
 
     def save(self, *args, **kwargs):
-        self.text = self.text.lower()
         self.slug = slugify(self.get_title())
 
         return super(Question, self).save(*args, **kwargs)
