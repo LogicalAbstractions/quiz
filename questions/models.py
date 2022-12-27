@@ -40,7 +40,7 @@ class Question(models.Model):
                                     blank=True)
 
     def tag_text(self):
-        tag_objects = self.tags.all()
+        tag_objects = self.tags.order_by('level')
         tag_names = [x.text for x in tag_objects]
 
         if len(tag_names) > 0:

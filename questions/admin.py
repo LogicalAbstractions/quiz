@@ -18,7 +18,7 @@ class TagAdmin(ModelAdmin):
 class QuestionAdmin(ModelAdmin):
     list_display = ('slug', 'tag_text', 'created_by', 'verified_by')
     inlines = [AnswerAdmin]
-    readonly_fields = ('created_by', 'slug')
+    readonly_fields = ('created_by', 'slug', 'verified_by')
     exclude = ('text',)
 
     def save_model(self, request, obj: Question, form, change):
