@@ -1,9 +1,16 @@
 {% extends 'admin/change_form.html' %}
 
 {% block submit_buttons_bottom %}
+
     <div class="submit-row">
-        <input type="submit" value="Verify" name="_verify">
+        {% if can_verify %}
+            <input type="submit" value="Verify" name="_verify">
+        {% endif %}
+        {% if can_unverify %}
+        <input type="submit" value="Unverify" name="_unverify">
+        {% endif %}
     </div>
+
     {{ block.super }}
 
 {% endblock %}
