@@ -25,7 +25,7 @@ class QuestionAdmin(ModelAdmin):
     list_display = ('slug', 'tag_text', 'created_by', 'verified_by', 'is_active')
     inlines = [AnswerAdmin]
     readonly_fields = ('created_by', 'verified_by')
-    exclude = ('text', 'slug')
+    exclude = ('text', 'explanation','slug')
 
     def change_view(self, request, object_id, form_url="", extra_context=None):
         extra_context = extra_context or {}

@@ -9,8 +9,10 @@ class TagTranslationOptions(TranslationOptions):
 
 
 class QuestionTranslationOptions(TranslationOptions):
-    fields = ('text',)
-    required_languages = ('de',)
+    fields = ('text', 'explanation')
+    required_languages = {
+        'de': ('text',)
+    }
 
 
 class AnswerTranslationOptions(TranslationOptions):

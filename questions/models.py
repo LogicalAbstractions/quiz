@@ -58,6 +58,8 @@ class Fact(TaggedItem):
 
 
 class Question(TaggedItem):
+    explanation = models.TextField(null=True, blank=True, default=None)
+
     is_active = models.BooleanField(default=True)
 
     created_by = models.ForeignKey(User,
