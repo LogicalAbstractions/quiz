@@ -22,7 +22,7 @@ class TaggedItem(models.Model):
     class Meta:
         abstract = True
 
-    text = models.TextField()
+    text = models.TextField(max_length=4096)
     slug = models.SlugField()
 
     tags = models.ManyToManyField(Tag)
@@ -58,7 +58,7 @@ class Fact(TaggedItem):
 
 
 class Question(TaggedItem):
-    explanation = models.TextField(null=True, blank=True, default=None)
+    explanation = models.TextField(max_length=4096, null=True, blank=True, default=None)
 
     is_active = models.BooleanField(default=True)
 
@@ -94,7 +94,7 @@ class Answer(models.Model):
     question = models.ForeignKey(Question,
                                  on_delete=models.CASCADE,
                                  editable=True)
-    text = models.TextField()
+    text = models.TextField(max_length=4096)
 
     is_correct = models.BooleanField()
     is_active = models.BooleanField(default=True)
