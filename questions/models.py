@@ -23,7 +23,7 @@ class TaggedItem(models.Model):
         abstract = True
 
     text = models.TextField(max_length=4096)
-    slug = models.SlugField()
+    slug = models.SlugField(max_length=255)
 
     tags = models.ManyToManyField(Tag)
 

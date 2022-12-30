@@ -2,3 +2,5 @@
 .idea/
 
 db.sqlite3
+
+questions/__pycache__/
